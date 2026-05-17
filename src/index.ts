@@ -16,6 +16,7 @@ export interface Env {}
 export default {
 	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
 		if (request.method == 'OPTIONS') {
+			return handleCors();
 		}
 
 		const url = new URL(request.url);
@@ -76,4 +77,11 @@ function corsHeaders(): Record<string, string> {
 		'Access-Control-Allow-Headers': 'Content-Type, Authorization',
 		'Access-Control-Max-Age': '86400',
 	};
+}
+
+function handleCors(): Response {
+	return new Response(null, {
+		status: 204,
+		headers: corsHeaders(),
+	});
 }
