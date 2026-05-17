@@ -1,6 +1,7 @@
 {
 	"name": "tap6-cloudflare-proxy",
 	"main": "src/index.ts",
+	"compatibility_date": "2026-05-17",
 	"observability": {
 		"enabled": true
 	}
