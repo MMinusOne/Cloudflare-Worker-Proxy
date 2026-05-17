@@ -1,0 +1,7 @@
+{
+	"name": "tap6-cloudflare-proxy",
+	"main": "src/index.ts",
+	"observability": {
+		"enabled": true
+	}
+}
